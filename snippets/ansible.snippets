@@ -749,7 +749,13 @@ snippet synchronize
 		delete=${21:#yes|no}
 
 snippet template
-	template: dest=${1:# REQUIRED} src=${2:# REQUIRED} validate=${3} backup=${4:#yes|no}
+  template: >
+    dest=${1:# REQUIRED} 
+    src=${2:# REQUIRED} 
+    mode=${3}
+    owner=${4}
+    validate=${5} 
+    backup=${6:#yes|no}
 
 snippet bigip_node
 	bigip_node: >

@@ -19,8 +19,8 @@ fun! s:SelectAnsible(fileType)
   let dir = expand("<afile>:p:h")
 
   " for windows
-  let fp = substitute(fp,'\\','/')
-  let dir = substitute(dir,'\\','/')
+  let fp = substitute(fp,'\\','/','g')
+  let dir = substitute(dir,'\\','/','g')
 
   " Check if buffer is file under any directory of a 'roles' directory
   " or under any *_vars directory

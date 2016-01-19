@@ -673,8 +673,15 @@ snippet acl
 		permissions=${8}
 
 snippet unarchive
-	unarchive: dest=${1:# REQUIRED} src=${2:# REQUIRED} copy=${3:#yes|no} creates=${4}
-
+	unarchive: >
+		dest=${1:# REQUIRED}
+		src=${2:# REQUIRED}
+		copy=${3:#yes|no}
+		creates=${4}
+		owner=${5}
+		group=${6}
+		mode=${7}
+  
 snippet fetch
 	fetch: >
 		dest=${1:# REQUIRED}
@@ -754,8 +761,9 @@ snippet template
 		src=${2:# REQUIRED}
 		mode=${3}
 		owner=${4}
-		validate=${5}
-		backup=${6:#yes|no}
+    group=${5}
+		validate=${6}
+		backup=${7:#yes|no}
 
 snippet bigip_node
 	bigip_node: >

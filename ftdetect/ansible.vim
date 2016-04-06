@@ -18,6 +18,10 @@ fun! s:SelectAnsible(fileType)
   let fp = expand("<afile>:p")
   let dir = expand("<afile>:p:h")
 
+  " for windows
+  let fp = substitute(fp,'\\','/','g')
+  let dir = substitute(dir,'\\','/','g')
+
   " Check if buffer is file under any directory of a 'roles' directory
   " or under any *_vars directory
   if fp =~ '/roles/.*\.y\(a\)\?ml$' || fp =~ '/\(group\|host\)_vars/'

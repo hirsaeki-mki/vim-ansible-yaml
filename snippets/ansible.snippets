@@ -1073,13 +1073,23 @@ snippet firewalld
 		port=${7}
 
 snippet capabilities
-	capabilities: capability=${1:# REQUIRED} path=${2:# REQUIRED} state=${3:#present|absent}
+	capabilities: >
+    capability=${1:# REQUIRED}
+    path=${2:# REQUIRED}
+    state=${3:#present|absent}
 
 snippet group
-	group: name=${1:# REQUIRED} state=${2:#present|absent} gid=${3} system=${4:#yes|no}
+	group: >
+    name=${1:# REQUIRED}
+    state=${2:#present|absent}
+    gid=${3}
+    system=${4:#yes|no}
 
 snippet modprobe
-	modprobe: name=${1:# REQUIRED} state=${2:#present|absent} params=${3}
+	modprobe: >
+    name=${1:# REQUIRED}
+    state=${2:#present|absent}
+    params=${3}
 
 snippet alternatives
 	alternatives: path=${1:# REQUIRED} name=${2:# REQUIRED} link=${3}
@@ -2548,23 +2558,12 @@ snippet get_url
 	get_url: >
 		url=${1:# REQUIRED}
 		dest=${2:# REQUIRED}
-		path=${3:[]}
-		url_password=${4}
-		force=${5:#yes|no}
-		use_proxy=${6:#yes|no}
-		src=${7}
-		selevel=${8:s0}
-		seuser=${9}
-		recurse=${10:#yes|no}
-		setype=${11}
-		sha256sum=${12}
-		serole=${13}
-		state=${14:#file|link|directory|hard|touch|absent}
-		mode=${15}
-		url_username=${16}
-		owner=${17}
-		group=${18}
-		validate_certs=${19:#yes|no}
+		url_password=${3}
+		force=${4:#yes|no}
+		use_proxy=${5:#yes|no}
+		sha256sum=${6}
+		url_username=${7}
+		validate_certs=${8:#yes|no}
 
 snippet ini_file
 	ini_file: >
@@ -2588,32 +2587,36 @@ snippet ini_file
 
 snippet uri
 	uri: >
-		path=${1:[]}
-		url=${2:# REQUIRED}
-		force=${3:#yes|no}
-		follow_redirects=${4:#all|safe|none}
-		owner=${5}
-		HEADER_=${6}
-		group=${7}
-		serole=${8}
-		setype=${9}
-		status_code=${10:200}
-		return_content=${11:#yes|no}
-		method=${12:#GET|POST|PUT|HEAD|DELETE|OPTIONS|PATCH}
-		body=${13}
-		state=${14:#file|link|directory|hard|touch|absent}
-		dest=${15}
-		selevel=${16:s0}
-		force_basic_auth=${17:#yes|no}
-		removes=${18}
-		user=${19}
-		password=${20}
-		src=${21}
-		seuser=${22}
-		recurse=${23:#yes|no}
-		creates=${24}
-		mode=${25}
-		timeout=${26:30}
+		url=${1:# REQUIRED}
+		HEADER_=${2}
+		body=${3}
+    body_format=${4}
+		creates=${5}
+		dest=${6}
+		follow_redirects=${7:#all|safe|none}
+    force_basic_auth=${8}
+    headers=${9}
+		method=${10:#GET|POST|PUT|HEAD|DELETE|OPTIONS|PATCH}
+		password=${11}
+		removes=${12}
+		return_content=${13:#yes|no}
+		status_code=${14:200}
+		timeout=${15:30}
+		user=${16}
+    varidete_certs=${17:#yes|no}
+		path=${18:[]}
+		force=${19:#yes|no}
+		owner=${20}
+		group=${21}
+		serole=${22}
+		setype=${23}
+		state=${24:#file|link|directory|hard|touch|absent}
+		selevel=${25:s0}
+		force_basic_auth=${26:#yes|no}
+		src=${27}
+		seuser=${28}
+		recurse=${29:#yes|no}
+		mode=${30}
 
 snippet replace
 	replace: >

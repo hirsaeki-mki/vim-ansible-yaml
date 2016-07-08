@@ -652,11 +652,13 @@ snippet command
 		executable=${5}
 
 snippet shell
-	shell: ${1} >
-		creates=${2}
-		chdir=${3}
-		removes=${4}
-		executable=${5}
+	shell: |
+    ${1}
+  args:
+		creates: ${2}
+		chdir: ${3}
+		removes: ${4}
+		executable: ${5}
 
 snippet stat
 	stat: path=${1:# REQUIRED} get_md5=${2:true} follow=${3:false}

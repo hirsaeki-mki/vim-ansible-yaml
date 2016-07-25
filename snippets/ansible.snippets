@@ -653,12 +653,12 @@ snippet command
 
 snippet shell
 	shell: |
-    ${1}
+    abbc:
   args:
-		creates: ${2}
-		chdir: ${3}
-		removes: ${4}
-		executable: ${5}
+		creates: ${1}
+		chdir: ${2}
+		removes: ${3}
+		executable: ${4}
 
 snippet stat
 	stat: path=${1:# REQUIRED} get_md5=${2:true} follow=${3:false}
@@ -759,7 +759,6 @@ snippet synchronize
 
 snippet template
 	template: >
-<<<<<<< HEAD
     dest=${1:# REQUIRED}
     src=${2:# REQUIRED} 
     validate=${3} 
@@ -767,15 +766,6 @@ snippet template
     mode=${6}
     owner=${7}
     group=${8}
-=======
-		dest=${1:# REQUIRED}
-		src=${2:# REQUIRED}
-		mode=${3}
-		owner=${4}
-    group=${5}
-		validate=${6}
-		backup=${7:#yes|no}
->>>>>>> mod0406
 
 snippet bigip_node
 	bigip_node: >

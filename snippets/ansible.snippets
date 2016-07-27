@@ -653,12 +653,12 @@ snippet command
 
 snippet shell
 	shell: |
-    abbc:
+		${1}
   args:
-		creates: ${1}
-		chdir: ${2}
-		removes: ${3}
-		executable: ${4}
+		creates: ${2}
+		chdir: ${3}
+		removes: ${4}
+		executable: ${5}
 
 snippet stat
 	stat: path=${1:# REQUIRED} get_md5=${2:true} follow=${3:false}

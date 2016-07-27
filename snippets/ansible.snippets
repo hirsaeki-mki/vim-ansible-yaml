@@ -141,6 +141,12 @@ snippet yum
 		disable_gpg_check=${6:#yes|no}
 		conf_file=${7}
 
+snippet package
+	package: >
+		name=${1:# REQUIRED}
+		state=${2:#present|latest|absent}
+		use=${3:yum}
+
 snippet apt_repository
 	apt_repository: >
 		repo=${1:# REQUIRED}
@@ -659,6 +665,8 @@ snippet shell
 		chdir: ${3}
 		removes: ${4}
 		executable: ${5}
+	environment:
+		${6}
 
 snippet stat
 	stat: path=${1:# REQUIRED} get_md5=${2:true} follow=${3:false}

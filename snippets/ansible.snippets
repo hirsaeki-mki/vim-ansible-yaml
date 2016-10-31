@@ -691,7 +691,7 @@ snippet unarchive
 		owner=${5}
 		group=${6}
 		mode=${7}
-  
+	
 snippet fetch
 	fetch: >
 		dest=${1:# REQUIRED}
@@ -767,13 +767,13 @@ snippet synchronize
 
 snippet template
 	template: >
-    dest=${1:# REQUIRED}
-    src=${2:# REQUIRED} 
-    validate=${3} 
-    backup=${4:#yes|no}
-    mode=${6}
-    owner=${7}
-    group=${8}
+		dest=${1:# REQUIRED}
+		src=${2:# REQUIRED} 
+		validate=${3} 
+		backup=${4:#yes|no}
+		mode=${6}
+		owner=${7}
+		group=${8}
 
 snippet bigip_node
 	bigip_node: >
@@ -1084,22 +1084,22 @@ snippet firewalld
 
 snippet capabilities
 	capabilities: >
-    capability=${1:# REQUIRED}
-    path=${2:# REQUIRED}
-    state=${3:#present|absent}
+		capability=${1:# REQUIRED}
+		path=${2:# REQUIRED}
+		state=${3:#present|absent}
 
 snippet group
 	group: >
-    name=${1:# REQUIRED}
-    state=${2:#present|absent}
-    gid=${3}
-    system=${4:#yes|no}
+		name=${1:# REQUIRED}
+		state=${2:#present|absent}
+		gid=${3}
+		system=${4:#yes|no}
 
 snippet modprobe
 	modprobe: >
-    name=${1:# REQUIRED}
-    state=${2:#present|absent}
-    params=${3}
+		name=${1:# REQUIRED}
+		state=${2:#present|absent}
+		params=${3}
 
 snippet alternatives
 	alternatives: path=${1:# REQUIRED} name=${2:# REQUIRED} link=${3}

@@ -21,35 +21,35 @@ For details, see the Detection section below.
 ### Using [Vundle](https://github.com/gmarik/vundle)
 
 1. Add the following to your `.vimrc` where other bundles are located:
-       
-		Bundle 'chase/vim-ansible-yaml'
+
+        Bundle 'plague-doctor/vim-ansible-yaml'
 
 2. Run from command line:
 
-		$ vim +BundleInstall
+        $ vim +BundleInstall
 
 ### Using [pathogen](https://github.com/tpope/vim-pathogen)
 
 1. Check out the repository into your bundle path:
 
         $ cd ~/.vim/bundle
-        $ git clone git://github.com/chase/vim-ansible-yaml.git
+        $ git clone git://github.com/plague-doctor/vim-ansible-yaml.git
 
 2. Install the help file. (Repeat this step if you get an updated version.) From inside vim,
 
-	:Helptags
+        :Helptags
 
 ### Normal
 
 1. Check out the repository and copy the following to `.vim/` directory or any
    other run time path, keeping their directory structure intact:
 
-		doc/ansible.txt
-		ftdetect/ansible.vim
-		syntax/ansible.vim
-		syntax/include/jinja.vim
-		syntax/include/yaml.vim
-		indent/ansible.vim
+        doc/ansible.txt
+        ftdetect/ansible.vim
+        syntax/ansible.vim
+        syntax/include/jinja.vim
+        syntax/include/yaml.vim
+        indent/ansible.vim
 
 2. Install the help file.  From inside vim,  `:helptags ~/.vim/doc`.
 
@@ -89,6 +89,18 @@ tasks:
 ```
 
 If `g:ansible_options` is not defined, or if the `ignore_blank_lines` key is not present, or the value is not `0`, then the indent function uses the default behavior.
+
+### workaround for Neomake in neo-vim
+
+Neomake in neo-vim does not work properly when the filetype is set to `anisble.yaml`. In order to workaround this issue, please define:
+
+    let g:vim_ansible_yaml_neomake_workaround = 1
+
+This variable will change the filetype for ansible to `ansible`.
+
+### snippets in YAML format
+
+This fork of chase's branch introduces snippets in YAML format, which is more readable.
 
 ### documentation_mapping
 

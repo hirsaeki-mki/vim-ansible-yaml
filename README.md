@@ -22,7 +22,7 @@ For details, see the Detection section below.
 
 1. Add the following to your `.vimrc` where other bundles are located:
 
-        Bundle 'chase/vim-ansible-yaml'
+        Bundle 'plague-doctor/vim-ansible-yaml'
 
 2. Run from command line:
 
@@ -33,7 +33,7 @@ For details, see the Detection section below.
 1. Check out the repository into your bundle path:
 
         $ cd ~/.vim/bundle
-        $ git clone git://github.com/chase/vim-ansible-yaml.git
+        $ git clone git://github.com/plague-doctor/vim-ansible-yaml.git
 
 2. Install the help file. (Repeat this step if you get an updated version.) From inside vim,
 
@@ -97,6 +97,10 @@ Neomake in neo-vim does not work properly when the filetype is set to `anisble.y
     let g:vim_ansible_yaml_neomake_workaround = 1
 
 This variable will change the filetype for ansible to `ansible`.
+
+### snippets in YAML format
+
+This fork of chase's branch introduces snippets in YAML format, which is more readable.
 
 ### documentation_mapping
 
